@@ -5,12 +5,12 @@ RewriteEngine On
 
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/(web)
-RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
-RewriteRule ^css/(.*)$ web/css/$1 [L]
-RewriteRule ^js/(.*)$ web/js/$1 [L]
-RewriteRule ^images/(.*)$ web/images/$1 [L]
-RewriteRule (.*) /web/$1
+RewriteCond %{REQUEST_URI} !^/(www)
+RewriteRule ^assets/(.*)$ /www/assets/$1 [L]
+RewriteRule ^css/(.*)$ www/css/$1 [L]
+RewriteRule ^js/(.*)$ www/js/$1 [L]
+RewriteRule ^images/(.*)$ www/images/$1 [L]
+RewriteRule (.*) /www/$1
 php_value memory_limit 128M
 
 #RewriteCond %{SERVER_PORT} !^443$
