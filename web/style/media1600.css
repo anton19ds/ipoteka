@@ -1,0 +1,18 @@
+@media(min-width: 1599px){
+	.block_fret_Y{
+		width: 50%;
+	}
+	#company{
+		background-size: cover;
+	}
+	#block_p_contact,
+	#uslug,
+	#keis,
+	.img_pl{
+		background-size: cover;
+
+	}
+	.right_block ul li{
+		width: 42%;
+	}
+}

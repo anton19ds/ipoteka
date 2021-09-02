@@ -1,0 +1,110 @@
+@media(max-width: 1230px){
+	.logo_block img{
+		width: 88%;
+	}	
+	.head_right{
+		width: fit-content;
+		display: inline-block;
+		text-align: right;
+	
+	}
+	.head_right li{
+		width: 50%;
+		display: block;
+		float: left;
+	}
+	.head_right li:first-child{
+		float: left;
+		margin-left: 0px;
+		width: fit-content;
+		padding-right: 20px;
+	}
+	.head_right li:last-child{
+		text-align: right;
+		width: fit-content;
+	}
+	.head_right li .phone span{
+		display: block;
+	}
+	.head_right li .login{
+		margin-left: 0;
+		display: inline-block;
+		width: fit-content;
+	}
+	.shild_rt p {
+		padding-left: 65px;
+	}
+	.shild_rt{
+		padding: 15px 13px 15px 13px;
+	}
+	.shild_rt p span{
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.shild_rt p:before {
+		left: -5px;
+
+	}
+	.shild_rt p a:after{
+		width: 12px;
+		height: 12px;
+		background-size: contain;
+		top: 5px;
+		right: -15px;
+	}
+	.foot-nav li a{
+		font-size: 12px;
+	}
+	.contact li a{
+		font-size: 12px;	
+	}
+	li.appSoc a {
+		margin-right: 2px;
+		max-width: calc(100% / 2 - 4px);
+	}
+	li.appSoc a img{
+		max-width: 100%;
+	}
+	.social > li:last-child > a{
+		width: calc(100% / 4 - 10px);
+	}
+	.social li {
+		font-size: 13px;
+		white-space: nowrap;
+	}
+	.sclat_f{
+		margin-top: 20px;
+	}
+	.sclat_f p{
+		font-size: 11px;
+	}
+	footer .logo_block img {
+		width: 78%;
+	}
+	footer .logo_block p{
+		font-size: 12px;
+	}
+	.second_block,
+	.blcontainer{
+		margin: 0 3%;
+	}
+	.block_trp{
+		padding: 15px;
+	}
+	.block_tref{
+		padding: 0 15px 15px 15px;
+		font-size: 12px;
+	}
+	.prolan{
+		padding: 15px 17px; 
+	}
+	.prolan p.hret {
+		height: 88px;
+	}
+	.btn.btn-link{
+		white-space: 230px;
+	}
+	.logo_block p{
+		padding-top: 5px;
+	}
+}

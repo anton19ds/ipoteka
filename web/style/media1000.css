@@ -1,0 +1,167 @@
+
+@media(max-width: 1000px){
+	.head_right li{
+		float: left;
+		display: block;
+		width: 50%;
+	}
+	.head_right{
+		width: 100%;
+	}
+	.head_right li .phone span{
+		display: block;
+	}	
+	.logo_block p {
+		padding-left: 10px;
+		line-height: 18px;
+	}
+	.logo_block img{
+		width: 95%;
+		margin: 0;
+		margin-top: 2px;
+	}
+	.blcontainer{
+		margin: 0 3%;
+	}
+	.calculator{
+		width: calc(100% - 10%);
+		padding: 40px;
+	}
+	.right_block ul li .in_bocks label{
+		width: 160px;
+	}
+	.head_right li:first-child{
+		margin-left: 0;
+	}
+	.head_right li:last-child{
+		text-align: right;
+	}
+	.head_right li .login{
+		display: inline-block;
+		width: fit-content;
+	}
+	.title_s{
+		margin-top: 40px;
+	}
+	.col-3_ld{
+		width: 50%;
+	}
+	.in_block_tr{
+		padding: 5% 2% 18% 9%;
+	}
+	.in_block_tr:before{
+    	width: 40px;
+    	height: 23px;
+    	top: 20px;
+    	left: 2px;
+    	background-size: contain;
+    	background-repeat: no-repeat;
+	}
+	.zak_P_tt:before{
+		left: -20%;
+	}
+	.in_block_tr:before{
+		display: none;
+	}
+	.second_block{
+		margin: 0;
+	}
+	.tek_2{
+		font-size: 12px;
+	}
+	.keis_tt:before{
+		width: 50px;
+		height: 50px;
+		background-size: contain;
+	}
+	.keis_tt{
+		padding-left: 60px;
+	}
+	.block_trp{
+		padding: 18px;
+	}
+	.block_tref ul{
+		font-size: 12px;
+	}
+	.block_tref{
+		padding: 0 18px 18px 18px;	
+	}
+	.shild_rt{
+		width: 90%;
+		padding: 15px 13px 15px 10px;
+	}
+	.shild_rt p:before{
+		left: -5px;
+	}
+	.shild_rt p {
+		padding-left: 100px;
+	}
+	.class_let{
+		padding: 10px;
+		width: calc(100% / 3 - 20px);
+		margin-bottom: 20px;
+	}
+	.class_let ul li{
+		margin: 0;
+	}
+	.img_partner{
+		width: 50px;
+		height: 50px;
+	}
+	.placc .class_let:nth-child(3n+2){
+		margin: 0 20px;
+	}
+	.title_trel{
+		margin-top: 100px;
+	}
+	.dis_ordt{
+		margin-top: 100px;
+	}
+	.riwers_bl{
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	.title_trel{
+		font-size: 23px;
+	}
+	.last_bl{
+		font-size: 20px;
+	}
+	.porelt_ab{
+		left: 50px;
+	}
+	.pltuk_bl{
+		margin-bottom: 100px;
+		height: 400px;
+	}
+	footer{
+		margin-top: 100px;
+	}
+	footer .logo_block p{
+		font-size: 9px;
+		line-height: 12px;
+	}
+	li.appSoc a{
+		margin-right: 5px;
+	}
+	.footer_bootom li {
+		font-size: 10px;
+	}
+		.block_fret_Y{
+		width: 50%;
+		padding: 20px;
+		height: 320px;
+	}
+	.contact li.help a, .contact li.graff a, .contact li.phone a{
+		white-space: nowrap;
+	}
+}
+
+@media(max-width: 895px){
+.shild_rt{
+	width: 46%;
+}
+.shild_rt p{
+	padding-left: 49px;
+}
+}

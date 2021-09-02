@@ -1,0 +1,24 @@
+@media(max-width: 1550px){
+	.dis_ordt{
+		margin-left: 35px;
+	}
+
+	.shild_rt p{
+		padding-left: 73px;
+
+	}
+	.shild_rt p:before{
+		left: 5px;
+	}
+	.shild_rt p span{
+		font-size: 14px;
+	}
+	.shild_rt{
+		height: 150px;
+	}
+	.imt_g{
+		width: 60px;
+		height: 60px;
+		background-size: contain;
+	}
+}
