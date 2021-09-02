@@ -295,28 +295,23 @@
                     }
                 }
             }
-            if(!AbsolutApplication::find()->where(['id' => $id])->exists()){
+            if(AbsolutApplication::find()->where(['id' => $id])->exists()){
                 $massiv = AbsolutApplication::find()->where(['user_id' => $id])->one();
                 $massivArr = json_decode($massiv->request, true);
-
-
-$trest = array(
-    'proof_of_income' => 'Потверждение дохода',
-    'insurance_scheme' =>'Вид страховки',
-    'credit_type' => 'Тип кредита',
-    'apartment_type' => 'Тип объекта',
-    'customer_type' => 'Тип клиента',
-    'credit_term' => 'Срок кредита',
-    'initial_fee' => 'Сумма первоначальног о взноса',
-    'apartment_price' => 'Стоимость объекта',
-    'credit_amount' => 'Сумма кредита',
-    'has_maternal_capital' => 'Есть материнский капитал',
-    'comment' => 'Комментарий к заявке'
+                $trest = array(
+                    'proof_of_income' => 'Потверждение дохода',
+                    'insurance_scheme' =>'Вид страховки',
+                    'credit_type' => 'Тип кредита',
+                    'apartment_type' => 'Тип объекта',
+                    'customer_type' => 'Тип клиента',
+                    'credit_term' => 'Срок кредита',
+                    'initial_fee' => 'Сумма первоначальног о взноса',
+                    'apartment_price' => 'Стоимость объекта',
+                    'credit_amount' => 'Сумма кредита',
+                    'has_maternal_capital' => 'Есть материнский капитал',
+                    'comment' => 'Комментарий к заявке'
 );
-
-
                 return $this->render('balans_form',[
-                    // 'resylt' => $resylt
                     'massivArr' => $massivArr,
                     'user' => $user,
                     'userInfo' => $userInfo,
@@ -326,7 +321,6 @@ $trest = array(
                  ]);
             }else{
                 return $this->render('balans',[
-                    // 'resylt' => $resylt
                     'user' => $user,
                     'userInfo' => $userInfo,
                     'userParam' => $userParam,

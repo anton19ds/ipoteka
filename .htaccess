@@ -11,7 +11,7 @@ RewriteRule ^css/(.*)$ www/css/$1 [L]
 RewriteRule ^js/(.*)$ www/js/$1 [L]
 RewriteRule ^images/(.*)$ www/images/$1 [L]
 RewriteRule (.*) /www/$1
-#php_value memory_limit 128M
+php_value memory_limit 128M
 
 #RewriteCond %{SERVER_PORT} !^443$
 #RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
