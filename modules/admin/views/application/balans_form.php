@@ -154,6 +154,7 @@ use yii\grid\GridView;
 </table>
     </div>
 </div>
-
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam illo exercitationem deleniti. Fugit, magni vero a cum sequi atque sint. Mollitia quia optio, minus error id iusto laudantium voluptate iste!
+<a href="">Прикрепить документ</a>
 
 
