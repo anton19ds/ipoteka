@@ -33,9 +33,6 @@ $this->params['breadcrumbs'][] = 'Update';
 			<div class="col-md-3 mt-4">
 				<?= $form->field($model, 'patronymic')->textInput(['maxlength' => true]) ?>    
 			</div>
-			<div class="col-md-3 mt-4">
-				<?= $form->field($model, 'created_at')->textInput(['value' => date('Y/m/d H:s', $model->created_at),'maxlength' => true]) ?>    
-			</div>
 
 			<div class="col-md-4 mt-4">
 				<?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>    
@@ -49,11 +46,6 @@ $this->params['breadcrumbs'][] = 'Update';
 			<div class="col-md-2 mt-4">
 				<label for="">Пол</label>
 				<?= $form->field($model, 'sex')->dropDownList([ 1 => 'Мужской', 2 => 'Женский', ], ['prompt' => ''])->label(false) ?>    
-			</div>
-
-			<div class="col-md-3 mt-4">
-				<label for="">Дата изменения</label>
-				<?= $form->field($model, 'updated_at')->textInput(['value' => date('Y/m/d H:s', $model->updated_at), 'maxlength' => true])->label(false) ?>    
 			</div>
 			<div class="col-md-12 mt-4">
 				<hr>    

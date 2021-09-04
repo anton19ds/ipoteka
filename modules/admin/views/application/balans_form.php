@@ -153,7 +153,16 @@ use yii\grid\GridView;
   </tbody>
 </table>
     </div>
+
+    <div class="col-md-12 mt-3">
+    <a href="" class="pur_link btn_pur" id="addDocument">Прикрепить документ</a>
+    <input type="file" class="sendFiles" style="display:none;">
+    </div>
+
+    <div class="col-md-12 mt-5">
+    <a href="" class="pur_link btn_pur">Запрос статуса заявки</a>
+    </div>
 </div>
-<a href="">Прикрепить документ</a>
+
 
 

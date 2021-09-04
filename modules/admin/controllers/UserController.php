@@ -49,12 +49,6 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single User model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionView($id)
     {
         $docZapros = new DocumentZapros();
@@ -63,6 +57,8 @@ class UserController extends Controller
             if($docZapros->load(Yii::$app->request->post()) && $docZapros->validate()){
                 if($docZapros->save()){
                     return $this->refresh();
+                }else{
+                    var_dump($docZapros->getErrors());
                 }
             }
         }

@@ -11,7 +11,7 @@
     use app\models\UserInfo;
     use app\models\UserParam;
     use app\models\AbsolutApplication;
-
+    use app\models\Region;
     class ApplicationController extends MainController
     {
         public  function actionIndex($id){
@@ -295,7 +295,7 @@
                     }
                 }
             }
-            if(AbsolutApplication::find()->where(['id' => $id])->exists()){
+            if(!AbsolutApplication::find()->where(['id' => $id])->exists()){
                 $massiv = AbsolutApplication::find()->where(['user_id' => $id])->one();
                 $massivArr = json_decode($massiv->request, true);
                 $trest = array(
@@ -310,7 +310,7 @@
                     'credit_amount' => 'Сумма кредита',
                     'has_maternal_capital' => 'Есть материнский капитал',
                     'comment' => 'Комментарий к заявке'
-);
+                );
                 return $this->render('balans_form',[
                     'massivArr' => $massivArr,
                     'user' => $user,
@@ -328,5 +328,80 @@
                  ]);
             }
         }
-    }    
 
+        public function actionFsspRequest($id)
+        {
+            
+            $model = User::find()->where(['id' => $id])->one();
+            $userParam = UserParam::find()->where(['user_id' => $id])->one();
+            $regions = Region::find()->all();
+            $arr = null;
+            $task = null;
+            $arrts = null;
+            if(Yii::$app->request->post()){
+                $data = Yii::$app->request->post();
+                if(!empty($data['task'])){
+                    $arrts = $this->ZaprosFssp($data['task']);
+                }else{
+                    $data = "https://api-ip.fssp.gov.ru/api/v1.0/search/physical?region=".$data['region'].
+                    "&firstname=".urlencode($data['firstname']).
+                    "&secondname=".urlencode($data['secondname']).
+                    "&lastname=".urlencode($data['lastname']).
+                    "&birthdate=".urlencode($data['birthdate']).
+                    "&token=7oqxGSrNWCww";
+                        $curl = curl_init();
+                        curl_setopt_array($curl, array(
+                        CURLOPT_URL => $data,
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_ENCODING => '',
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 0,
+                        CURLOPT_FOLLOWLOCATION => false,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => 'GET',
+                    ));
+                    $request = curl_exec($curl);
+                    curl_close($curl);
+                    $arr = json_decode($request, true);
+                    
+                    if(isset($arr['response']['task']) && !empty($arr['response']['task'])){
+                        $task = $arr['response']['task'];
+                    }
+                }
+            }
+            // curl -X GET "" -H "accept: application/json"
+            return $this->render('index-fssp',[
+                'arr' => $arr,
+                'regions' => $regions,
+                'userParam' => $userParam,
+                'model' => $model,
+                'task' =>$task,
+                'arrts' => $arrts
+            ]);
+        }
+        
+        public function ZaprosFssp($task)
+        {
+                if(!empty($task)){
+                    $curl = curl_init();
+                        $data = "https://api-ip.fssp.gov.ru/api/v1.0/result?token=7oqxGSrNWCww&task=".urlencode($task);
+                        curl_setopt_array($curl, array(
+                    CURLOPT_URL => $data,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => false,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => 'GET',
+                ));
+                    $response = curl_exec($curl);
+                    curl_close($curl);
+                    $arr = json_decode($response, true);
+                    return $arr;
+                     
+                }
+        } 
+
+    }
+    

@@ -38,7 +38,7 @@ $form = ActiveForm::begin([
 							<?= $form->field($model, 'surname')->textInput(['placeholder' => "Фамилия*"])->label(false) ?>
 						</li>
 						<li>
-							<?= $form->field($model, 'patronymic')->textInput(['placeholder' => "Отчество"])->label(false) ?>
+							<?= $form->field($model, 'patronymic')->textInput(['placeholder' => "Отчество", 'required' => true])->label(false) ?>
 						</li>
 						<li>
 							<label for="">Введите номер телефона</label>

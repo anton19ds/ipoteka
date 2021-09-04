@@ -14,6 +14,13 @@ $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
+<?
+    $form = ActiveForm::begin([
+        'id' => 'document-form',
+        'options' => ['class' => 'form-horizontal'],
+
+]);
+?>
 <div class="user-index">
     <div class="row">
         <div class="col-md-12">
@@ -222,6 +229,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php endforeach ?>
             </ul>
         </div>
+        <div class="col-md-12">
+            <input type="file" name="Doc[docInput]" id="docgg">
+            <?= Html::submitButton('Сохранить документ',['class' => 'pur_link btn_pur mt-3'])?>
+            
+        </div>
         <div class="col-md-12 mt-5">
             <a href="" class="pur_link btn_pur" id="zaprosDocunent">Запросить документы</a>
         </div>
@@ -262,13 +274,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'size' => 'modal-xl'
     ]);
     ?>
-<?
-    $form = ActiveForm::begin([
-        'id' => 'document-form',
-        'options' => ['class' => 'form-horizontal'],
 
-]);
-?>
     <h2>
         Отправка сообщения пользавателю на запрос документов
     </h2>
@@ -284,9 +290,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]);
     ?>
     <?= Html::submitButton('Отправить',['class' => 'pur_link btn_pur']);?>
-    <?
-        ActiveForm::end();
-    ?>
+
 <?
     Modal::end();
 ?>
@@ -305,3 +309,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <?
     Modal::end();
 ?>
+    <?
+        ActiveForm::end();
+    ?>

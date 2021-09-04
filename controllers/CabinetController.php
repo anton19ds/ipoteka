@@ -323,9 +323,26 @@ class CabinetController extends UserController
 	        $numPass = rand(0, 999).rand(0, 999);
             $session = Yii::$app->session;
             $session->set('smsCode', $numPass);
-            return $numPass;
+			if($this->SetSms($data['phone'],$numPass)){
+				return $numPass;
+			}
         }
     }
+
+
+	public function SetSms($phone, $code)
+	{
+		$smsru = new \SMSRU('2BA30472-0021-1695-835C-A0EB277FD1B3');
+		$data = new \stdClass();
+		$data->to = $phone;
+		$data->text = 'Код потверждения телефона '.$code;
+		$sms = $smsru->send_one($data);
+		if ($sms->status == "OK") {
+				return true;
+			} else {
+    			return false;
+		}
+	}
 
 
     public function actionGetSms()

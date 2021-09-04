@@ -192,6 +192,19 @@ $(document).ready(function (e) {
 		}
 		
 	});
+	
+	$('#addDocument').on('click', function(e){
+		e.preventDefault();
+		$('.sendFiles').trigger( "click" );
+	})
+	$('.fssp-zaps').on('click', function(e){
+		e.preventDefault();
+		var task = $(this).data('task');
+		$.post('/admin/application/zapros-fssp', {task: task}, Success);
+		function Success(data){
+			console.log(data);
+		}
+	});
 });
 
 
